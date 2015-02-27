@@ -1,7 +1,7 @@
 (function(){
 var nv = window.nv || {};
 
-nv.version = '1.2.0';
+nv.version = '1.2.2';
 nv.dev = false; //set false when in production
 
 window.nv = nv;
