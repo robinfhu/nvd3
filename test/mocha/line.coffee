@@ -142,3 +142,16 @@ describe 'NVD3', ->
 
             lines = builder.$ '.nv-linesWrap .nv-groups .nv-group.dashed'
             lines.length.should.equal 1, 'dashed class exists'
+
+        it 'can set margin.top', ->
+            builder.model.showLegend(true);
+            builder.model.margin({top: 100});
+            builder.model.update();
+
+            wrap = builder.$ '.nv-wrap.nv-lineChart'
+            transform = wrap[0].getAttribute 'transform'
+            transform.should.equal 'translate(75,130)'
+
+            legend = builder.$ '.nv-legendWrap'
+            transform = legend[0].getAttribute 'transform'
+            transform.should.equal 'translate(0,-30)'
